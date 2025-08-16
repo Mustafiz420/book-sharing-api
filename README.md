@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Book Sharing Platform (Laravel 10 + Passport)
+## Book Sharing Platform
 
 A REST API backend for a simple Book Sharing Platform with two roles: User and Admin.
 
