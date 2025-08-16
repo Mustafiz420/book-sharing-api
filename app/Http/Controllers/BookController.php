@@ -25,6 +25,7 @@ class BookController extends Controller
             'user_id' => $user->id,
         ]);
 
+        // Return only the requested fields (no nested user)
         return $this->response->created([
             'book' => (new BookResource($book))->toArray($request),
         ], 'Book shared successfully');

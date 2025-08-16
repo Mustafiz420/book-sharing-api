@@ -15,12 +15,16 @@ class BookResource extends JsonResource
             'title' => $this->title,
             'author' => $this->author,
             'description' => $this->description,
-            'user' => $this->whenLoaded('user', function () {
-                return [
-                    'id' => (int) $this->user->id,
-                    'name' => $this->user->name,
-                ];
-            }),
+            'user_id' => $this->when(!isset($this->distance_km) && isset($this->user_id), (int) $this->user_id),
+            'user' => $this->when(
+                $this->relationLoaded('user') || isset($this->user_name),
+                function () {
+                    return [
+                        'id' => isset($this->user_id) ? (int) $this->user_id : null,
+                        'name' => $this->user_name ?? null,
+                    ];
+                }
+            ),
             'distance_km' => $this->when(isset($this->distance_km), fn () => round((float) $this->distance_km, 2)),
         ];
     }

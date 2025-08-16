@@ -23,7 +23,7 @@
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password\",\n  \"latitude\": 23.7806,\n  \"longitude\": 90.2792\n}"
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\",\n  \"latitude\": 23.7806,\n  \"longitude\": 90.2792\n}"
             }
           },
           "response": []
